@@ -13,9 +13,9 @@ return new class extends Migration {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('format')
-                ->references('id')->on('file_type');
+            $table->foreignId('format')->references('id')->on('file_type');
             $table->string('size');
+            $table->string('details')->nullable();
             $table->timestamps();
         });
     }

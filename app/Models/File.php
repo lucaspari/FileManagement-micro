@@ -12,7 +12,7 @@ class File extends Model
 
     protected $table = "files";
 
-    protected $fillable = ["id", "name", "format", "size",];
+    protected $fillable = ["id", "name", "format", "size", "details"];
 
     public function fileType(): BelongsTo
     {

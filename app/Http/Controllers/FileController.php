@@ -19,14 +19,12 @@ class FileController extends Controller
     function addFile(Request $request): JsonResponse
     {
         try {
-
-            $file = $request->file('file');
-            $file = $this->fileService->insert($file);
+            $file = $this->fileService->insert($request);
             return response()->json(['message' => 'File uploaded successfully', 'file' => $file
 
             ], 200);
         } catch (Exception $e) {
-            return response()->json(['message' => 'Error uploading file', 'error' => $e->getMessage()], 500);
+            return response()->json(['message' => 'Error uploading file', 'error' => $e->getMessage()], 400);
         }
     }
 }
