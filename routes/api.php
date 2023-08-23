@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post("/add-file", [FileController::class, 'addFile']);
-
+Route::get("/download-pdf/{filetype}", [FileController::class, 'downloadPDF']);
